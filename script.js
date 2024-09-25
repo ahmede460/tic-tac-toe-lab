@@ -112,6 +112,7 @@ function checkWinner(board) {
         }
     }
 }
+
 function reset(){
     winner = false
     board = ['', '', '', '', '', '', '', '', '']
