@@ -53,6 +53,12 @@ function updateBoard(event) {
         }
 
         checkWinner(board)
+
+        if (!board.includes("")){
+            tie = true
+            messageElement.innerText = "Tie! Play again" 
+
+        } 
     }
 }
 
@@ -62,17 +68,26 @@ function checkWinner(board) {
         if (board[0] == board[1] && board[0] == board[2]) {
             winner = true
             messageElement.innerText = `Game Over: ${board[0]} Wins!`
+            squareElements[0].style.backgroundColor = "green"
+            squareElements[1].style.backgroundColor = "green"
+            squareElements[2].style.backgroundColor = "green"
 
 
         }
         if (board[0] == board[3] && board[0] == board[6]) {
             winner = true
             messageElement.innerText = `Game Over: ${board[0]} Wins!`
+            squareElements[0].style.backgroundColor = "green"
+            squareElements[3].style.backgroundColor = "green"
+            squareElements[6].style.backgroundColor = "green"
 
         }
         if (board[0] == board[4] && board[0] == board[8]) {
             winner = true
             messageElement.innerText = `Game Over: ${board[0]} Wins!`
+            squareElements[0].style.backgroundColor = "green"
+            squareElements[4].style.backgroundColor = "green"
+            squareElements[8].style.backgroundColor = "green"
 
         }
     }
@@ -81,11 +96,17 @@ function checkWinner(board) {
         if (board[2] == board[4] && board[2] == board[6]) {
             winner = true
             messageElement.innerText = `Game Over: ${board[2]} Wins!`
+            squareElements[2].style.backgroundColor = "green"
+            squareElements[4].style.backgroundColor = "green"
+            squareElements[6].style.backgroundColor = "green"
 
         }
         if (board[2] == board[5] && board[2] == board[8]) {
             winner = true
             messageElement.innerText = `Game Over: ${board[2]} Wins!`
+            squareElements[2].style.backgroundColor = "green"
+            squareElements[5].style.backgroundColor = "green"
+            squareElements[8].style.backgroundColor = "green"
 
         }
     }
@@ -95,6 +116,9 @@ function checkWinner(board) {
         if (board[1] == board[4] && board[1] == board[7]) {
             winner = true
             messageElement.innerText = `Game Over: ${board[1]} Wins!`
+            squareElements[1].style.backgroundColor = "green"
+            squareElements[4].style.backgroundColor = "green"
+            squareElements[7].style.backgroundColor = "green"
         }
     }
 
@@ -102,6 +126,9 @@ function checkWinner(board) {
         if (board[3] == board[4] && board[3] == board[5]) {
             winner = true
             messageElement.innerText = `Game Over: ${board[3]} Wins!`
+            squareElements[3].style.backgroundColor = "green"
+            squareElements[4].style.backgroundColor = "green"
+            squareElements[5].style.backgroundColor = "green"
         }
     }
 
@@ -109,15 +136,21 @@ function checkWinner(board) {
         if (board[6] == board[7] && board[6] == board[8]) {
             winner = true
             messageElement.innerText = `Game Over: ${board[3]} Wins!`
+            squareElements[6].style.backgroundColor = "green"
+            squareElements[7].style.backgroundColor = "green"
+            squareElements[8].style.backgroundColor = "green"
         }
     }
 }
 
 function reset(){
     winner = false
+    tie = false
+    messageElement.innerText = `Current Player: ${turn}`
     board = ['', '', '', '', '', '', '', '', '']
     for(i=0;i< board.length;i++){
         squareElements[i].innerText = ""
+        squareElements[i].style.backgroundColor = "gainsboro"
     }
 
 }
