@@ -28,12 +28,9 @@ function gameStart() {
     winner = false
     messageElement.innerText = `Current Player: ${turn}`
     board = ['', '', '', '', '', '', '', '', '']
-
     tie = false
 
 }
-
-function render() { }
 
 function updateBoard(event) {
     if (!winner) {
