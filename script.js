@@ -16,10 +16,7 @@ let board
 let turn
 let winner
 let tie
-
-
 /*------------------------ Cached Element References ------------------------*/
-
 const squareElements = document.querySelectorAll('.sqr')
 const messageElement = document.querySelector('#message')
 /*-------------------------------- Functions --------------------------------*/
@@ -59,7 +56,6 @@ function updateBoard(event) {
     }
 }
 
-
 function checkWinner(board) {
     if (board[0] != '') {
         if (board[0] == board[1] && board[0] == board[2]) {
@@ -68,8 +64,6 @@ function checkWinner(board) {
             squareElements[0].style.backgroundColor = "green"
             squareElements[1].style.backgroundColor = "green"
             squareElements[2].style.backgroundColor = "green"
-
-
         }
         if (board[0] == board[3] && board[0] == board[6]) {
             winner = true
@@ -77,7 +71,6 @@ function checkWinner(board) {
             squareElements[0].style.backgroundColor = "green"
             squareElements[3].style.backgroundColor = "green"
             squareElements[6].style.backgroundColor = "green"
-
         }
         if (board[0] == board[4] && board[0] == board[8]) {
             winner = true
@@ -85,7 +78,6 @@ function checkWinner(board) {
             squareElements[0].style.backgroundColor = "green"
             squareElements[4].style.backgroundColor = "green"
             squareElements[8].style.backgroundColor = "green"
-
         }
     }
 
@@ -96,7 +88,6 @@ function checkWinner(board) {
             squareElements[2].style.backgroundColor = "green"
             squareElements[4].style.backgroundColor = "green"
             squareElements[6].style.backgroundColor = "green"
-
         }
         if (board[2] == board[5] && board[2] == board[8]) {
             winner = true
@@ -104,7 +95,6 @@ function checkWinner(board) {
             squareElements[2].style.backgroundColor = "green"
             squareElements[5].style.backgroundColor = "green"
             squareElements[8].style.backgroundColor = "green"
-
         }
     }
 
